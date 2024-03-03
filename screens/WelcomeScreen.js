@@ -1,7 +1,6 @@
 import { View, Text, SafeAreaView,TouchableOpacity } from 'react-native'
 import React from 'react'
 
-
 export default function WelcomeScreen() {
   const navigation = useNavigation();
   return (
