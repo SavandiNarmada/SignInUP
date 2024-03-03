@@ -22,15 +22,12 @@ export default function WelcomeScreen() {
           </TouchableOpacity>
 
           <View className="flex-row justify-center">
-            <Text>Already have an account?</Text>
+            <Text className="text-white font-semibold">Already have an account?</Text>
             <TouchableOpacity>
-              <Text>Log In</Text>
+              <Text className="font-semibold text-yellow-400">Log In</Text>
             </TouchableOpacity>
           </View>
-
         </View>
-
-
       </View>
     </SafeAreaView>
   )
