@@ -1,10 +1,37 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView,TouchableOpacity } from 'react-native'
 import React from 'react'
+
 
 export default function WelcomeScreen() {
   return (
-    <View>
-      <Text>WelcomeScreen</Text>
-    </View>
+    <SafeAreaView className="flex-1" style={{backgroundColor: themeColors.bg}}>
+      <View className="flex-1 flex justify-around my-4">
+        <Text className="text-white font-bold  text-4xl text-center">
+          Let's Get Started!
+        </Text>
+
+        <View className="flex-row justify-center">
+          <Image source={require("../assets/images/welcome.jpg")} style={{width:350,height:350}} />
+        </View>
+
+        <View className="space-y-4">
+          <TouchableOpacity className="py-3 bg-yellow-400 mx-7 rounded-xl">
+            <Text className="text-xl font-bold text-center text-gray-700">
+                  SignUp
+            </Text>
+          </TouchableOpacity>
+
+          <View className="flex-row justify-center">
+            <Text>Already have an account?</Text>
+            <TouchableOpacity>
+              <Text>Log In</Text>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+
+
+      </View>
+    </SafeAreaView>
   )
 }
