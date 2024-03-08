@@ -13,8 +13,9 @@ export default function AppNavigation() {
         <Stack.Screen name='Welcome' options={{ headerShown: false }}>
           {(props) => <WelcomeScreen {...props} />}
         </Stack.Screen>
-        <Stack.Screen name='SignUp' component={SignUpScreen} /> {/* Add SignUpScreen as a screen */}
-        {/* Other screen definitions */}
+        <Stack.Screen name='SignUp' options={{ headerShown: false }}>
+          {(props) => <SignUpScreen {...props} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
