@@ -1,6 +1,6 @@
-import { View, Text, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
-import {themeColors}from '../App'
+import { View, Text, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
+import React from 'react';
+import {themeColors}from '../App';
 import {ArrowLeftIcon}from 'react-native-heroicons/solid';
 import {useNavigation}from '@react-navigation/native';
 

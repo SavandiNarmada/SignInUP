@@ -1,21 +1,27 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import AppNavigation from './navigation/appNavigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeScreen from './screens/WelcomeScreen';
+import SignUpScreen from './screens/SignUpScreen'; // Import SignUpScreen
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+export default function AppNavigation() {
   return (
-    <View style={styles.container}>
-      <AppNavigation/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Welcome'>
+        <Stack.Screen name='Welcome' options={{ headerShown: false }}>
+          {(props) => <WelcomeScreen {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name='SignUp' component={SignUpScreen} /> {/* Add SignUpScreen as a screen */}
+        {/* Other screen definitions */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export const themeColors = {
+  bg: '#ffffff', // Example background color
+  text: '#000000', // Example text color
+  // Add more colors as needed
+};
