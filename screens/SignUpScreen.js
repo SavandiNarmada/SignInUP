@@ -1,76 +1,56 @@
-import { View, Text, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
 import React from 'react';
-import {themeColors}from '../App';
-import {ArrowLeftIcon}from 'react-native-heroicons/solid';
-import {useNavigation}from '@react-navigation/native';
+import { View, Text, SafeAreaView, TouchableOpacity, TextInput, Image } from 'react-native';
+import { themeColors } from '../App';
+import { ArrowLeftIcon } from 'react-native-heroicons/solid';
+import { useNavigation } from '@react-navigation/native';
 
 export default function SignUpScreen() {
- const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
-    <View className="flex-1 bg-white" style={{backgroundColor:themeColors.bg}}>
-       <SafeAreaView className="flex">
-         <View className="flex-row justify-start">
-           <TouchableOpacity onPress={()=> navigation.goBack()}   className="bg-yellow-400 p-2 rounded-tr-2xl rounded-bl-2xl ml-4">
-             <ArrowLeftIcon size="20" color="black"/>
-           </TouchableOpacity>
-         </View>
+    <View style={{ flex: 1, backgroundColor: themeColors.bg }}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'start', marginTop: 70 }}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{ backgroundColor: '#FFD700', padding: 10, borderRadius: 20, marginLeft: 10 }}>
+            <ArrowLeftIcon size={35} color="black" style={{ transform: [{ rotate: '3deg' }] }} />
+          </TouchableOpacity>
+        </View>
 
-         <View className="flex-row justify-center">
-           <Image source={require('../assets/images/signup.png')} style={{width: 165, height: 110}} />
-         </View>
-       </SafeAreaView>  
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          <Image source={require('../assets/images/signup.png')} style={{ width: 400, height: 400 }} />
+        </View>
 
-         <View 
-           className="flex-1 bg-white px-8 pt-8"
-           style={{borderTopLeftRadius:50, borderTopRightRadius: 50}}>  
-          
-           <View className="form space-y-2">
-             <Text className="text-gray-700 ml-4">Full Name</Text>
-             <TextInput 
-               className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3"
-               value='Narmada Henayaka'
-               placeholder='Enter Name'
-             />
+        <View style={{ flex: 1, backgroundColor: 'white', paddingHorizontal: 8, paddingTop: 8, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+          <View style={{ marginHorizontal: 8, marginBottom: 20 }}>
+            <Text style={{ color: 'gray', marginLeft: 4 }}>Full Name</Text>
+            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='Narmada Henayaka' placeholder='Enter Name' />
 
-            <Text className="text-gray-700 ml-4">Email Address</Text>
-             <TextInput 
-               className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3"
-               value='savandi.narmada@gmail.com'
-               placeholder='Enter Email'
-             />
+            <Text style={{ color: 'gray', marginLeft: 4 }}>Email Address</Text>
+            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='savandi.narmada@gmail.com' placeholder='Enter Email' />
 
-             <Text className="text-gray-700 ml-4">Password</Text>
-             <TextInput 
-               className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-7"
-               secureTextEntry
-               value='test12345'
-               placeholder='Enter Password'
-             />
+            <Text style={{ color: 'gray', marginLeft: 4 }}>Password</Text>
+            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20 }} secureTextEntry value='test12345' placeholder='Enter Password' />
+          </View>
 
-             <TouchableOpacity className="py-3 bg-yellow-400 rounded-xl">
-               <Text className="font-xl font-bold text-center text-gray-700">
-                 Sign Up
-               </Text>
-             </TouchableOpacity>
-           </View> 
+          <TouchableOpacity style={{ backgroundColor: '#FFD700', padding: 14, borderRadius: 20, marginBottom: 20, alignItems: 'center' }}>
+            <Text style={{ color: 'gray', fontWeight: 'bold' }}>Sign Up</Text>
+          </TouchableOpacity>
 
-           <Text className="text-xl text-gray-700 font-bold text-center py-5"> Or </Text>
+          <Text style={{ textAlign: 'center', color: 'gray', marginBottom: 20 }}>Or</Text>
 
-           <View className="flex-row justify-center">
-             <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
-               <Image source={require('../assets/images/gmail.png')}
-                 className="w-10 h-10"
-               />
-             </TouchableOpacity>
-           </View>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 20 }}>
+            <TouchableOpacity style={{ backgroundColor: '#E5E5E5', padding: 10, borderRadius: 20 }}>
+              <Image source={require('../assets/images/gmail.png')} style={{ width: 40, height: 40 }} />
+            </TouchableOpacity>
+          </View>
 
-           <View className="flex-row justify-center mt-7">
-             <Text className="text-gray-500 font-semibold">Already have an account?</Text>
-             <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
-               <Text className="font-semibold text-yellow-500">Login</Text>
-             </TouchableOpacity>
-         </View>
-         </View>        
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <Text style={{ color: 'gray', fontWeight: 'bold' }}>Already have an account? </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+              <Text style={{ color: 'yellow', fontWeight: 'bold' }}>Login</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
     </View>
   );
 }
