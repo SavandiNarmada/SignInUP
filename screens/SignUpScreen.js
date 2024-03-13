@@ -22,13 +22,13 @@ export default function SignUpScreen() {
         <View style={{ flex: 1, backgroundColor: 'white', paddingHorizontal: 8, paddingTop: 8, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
           <View style={{ marginHorizontal: 8, marginBottom: 20 }}>
             <Text style={{ color: 'gray', marginLeft: 4 }}>Full Name</Text>
-            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='Narmada Henayaka' placeholder='Enter Name' />
+            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='' placeholder='Enter Name' />
 
             <Text style={{ color: 'gray', marginLeft: 4 }}>Email Address</Text>
-            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='savandi.narmada@gmail.com' placeholder='Enter Email' />
+            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='' placeholder='Enter Email' />
 
             <Text style={{ color: 'gray', marginLeft: 4 }}>Password</Text>
-            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20 }} secureTextEntry value='test12345' placeholder='Enter Password' />
+            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20 }} secureTextEntry value='' placeholder='Enter Password' />
           </View>
 
           <TouchableOpacity style={{ backgroundColor: '#FFD700', padding: 14, borderRadius: 20, marginBottom: 20, alignItems: 'center' }}>
