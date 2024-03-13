@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity, TextInput, Image } from 'react-native';
 import { themeColors } from '../App';
 import { ArrowLeftIcon } from 'react-native-heroicons/solid';
@@ -6,6 +6,10 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function SignUpScreen() {
   const navigation = useNavigation();
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <View style={{ flex: 1, backgroundColor: themeColors.bg }}>
       <SafeAreaView style={{ flex: 1 }}>
@@ -22,13 +26,29 @@ export default function SignUpScreen() {
         <View style={{ flex: 1, backgroundColor: 'white', paddingHorizontal: 8, paddingTop: 8, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
           <View style={{ marginHorizontal: 8, marginBottom: 20 }}>
             <Text style={{ color: 'gray', marginLeft: 4 }}>Full Name</Text>
-            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='' placeholder='Enter Name' />
+            <TextInput
+              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }}
+              value={fullName}
+              onChangeText={text => setFullName(text)}
+              placeholder='Enter Name'
+            />
 
             <Text style={{ color: 'gray', marginLeft: 4 }}>Email Address</Text>
-            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }} value='' placeholder='Enter Email' />
+            <TextInput
+              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }}
+              value={email}
+              onChangeText={text => setEmail(text)}
+              placeholder='Enter Email'
+            />
 
             <Text style={{ color: 'gray', marginLeft: 4 }}>Password</Text>
-            <TextInput style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20 }} secureTextEntry value='' placeholder='Enter Password' />
+            <TextInput
+              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20 }}
+              value={password}
+              onChangeText={text => setPassword(text)}
+              secureTextEntry
+              placeholder='Enter Password'
+            />
           </View>
 
           <TouchableOpacity style={{ backgroundColor: '#FFD700', padding: 14, borderRadius: 20, marginBottom: 20, alignItems: 'center' }}>
