@@ -13,18 +13,18 @@ export default function SignUpScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: themeColors.bg }}>
       <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'start', marginTop: 70 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'start', marginTop: 60 }}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={{ backgroundColor: '#FFD700', padding: 10, borderRadius: 20, marginLeft: 10 }}>
             <ArrowLeftIcon size={35} color="black" style={{ transform: [{ rotate: '3deg' }] }} />
           </TouchableOpacity>
         </View>
 
         <View style={{ flex: 1, alignItems: 'center' }}>
-          <Image source={require('../assets/images/signup.png')} style={{ width: 400, height: 400 }} />
+          <Image source={require('../assets/images/signup.png')} style={{ width: 250, height: 250}} />
         </View>
 
         <View style={{ flex: 1, backgroundColor: 'white', paddingHorizontal: 8, paddingTop: 8, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
-          <View style={{ marginHorizontal: 8, marginBottom: 20 }}>
+          <View style={{ marginHorizontal: 8, marginBottom: 60, marginTop:'auto' }}>
             <Text style={{ color: 'gray', marginLeft: 4 }}>Full Name</Text>
             <TextInput
               style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }}
@@ -51,22 +51,15 @@ export default function SignUpScreen() {
             />
           </View>
 
-          <TouchableOpacity style={{ backgroundColor: '#FFD700', padding: 14, borderRadius: 20, marginBottom: 20, alignItems: 'center' }}>
+          <TouchableOpacity style={{ backgroundColor: '#FFD700', padding: 14, borderRadius: 20, marginBottom: 30, alignItems: 'center' }}>
             <Text style={{ color: 'gray', fontWeight: 'bold' }}>Sign Up</Text>
           </TouchableOpacity>
 
           <Text style={{ textAlign: 'center', color: 'gray', marginBottom: 20 }}>Or</Text>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 20 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 40 }}>
             <TouchableOpacity style={{ backgroundColor: '#E5E5E5', padding: 10, borderRadius: 20 }}>
               <Image source={require('../assets/images/gmail.png')} style={{ width: 40, height: 40 }} />
-            </TouchableOpacity>
-          </View>
-
-          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-            <Text style={{ color: 'gray', fontWeight: 'bold' }}>Already have an account? </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-              <Text style={{ color: 'yellow', fontWeight: 'bold' }}>Login</Text>
             </TouchableOpacity>
           </View>
         </View>
