@@ -10,58 +10,56 @@ export default function SignUpScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handleLogin = () => {
+    // Handle signup logic here
+    console.log('Signup button clicked');
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: themeColors.bg }}>
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'start', marginTop: 60 }}>
           <TouchableOpacity onPress={() => navigation.goBack()} style={{ backgroundColor: '#FFD700', padding: 10, borderRadius: 20, marginLeft: 10 }}>
-            <ArrowLeftIcon size={35} color="black" style={{ transform: [{ rotate: '3deg' }] }} />
+            <ArrowLeftIcon size={30} color="black" style={{ transform: [{ rotate: '0deg' }] }} />
           </TouchableOpacity>
         </View>
 
         <View style={{ flex: 1, alignItems: 'center' }}>
-          <Image source={require('../assets/images/signup.png')} style={{ width: 250, height: 250}} />
+          <Image source={require('../assets/images/signup.png')} style={{ width: 300, height: 250}} />
         </View>
 
         <View style={{ flex: 1, backgroundColor: 'white', paddingHorizontal: 8, paddingTop: 8, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
-          <View style={{ marginHorizontal: 8, marginBottom: 60, marginTop:'auto' }}>
-            <Text style={{ color: 'gray', marginLeft: 4 }}>Full Name</Text>
+          <View style={{ marginHorizontal: 10, marginBottom: 20 }}>
+            <Text style={{ color: 'gray', marginLeft: 4, marginBottom:8 }}>Full Name</Text>
             <TextInput
-              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }}
+              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 15, marginBottom: 10 }}
               value={fullName}
               onChangeText={text => setFullName(text)}
-              placeholder='Enter Name'
+              placeholder='Jhon Doe'
             />
 
-            <Text style={{ color: 'gray', marginLeft: 4 }}>Email Address</Text>
+            <Text style={{ color: 'gray', marginLeft: 4, marginBottom:8 }}>Email Address</Text>
             <TextInput
-              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20, marginBottom: 8 }}
+              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 15, marginBottom:10 }}
               value={email}
               onChangeText={text => setEmail(text)}
-              placeholder='Enter Email'
+              placeholder='example@gamil.com'
             />
 
-            <Text style={{ color: 'gray', marginLeft: 4 }}>Password</Text>
+            <Text style={{ color: 'gray', marginLeft: 4, marginBottom:8 }}>Password</Text>
             <TextInput
-              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 20 }}
+              style={{ padding: 12, backgroundColor: '#E5E5E5', borderRadius: 15 }}
               value={password}
               onChangeText={text => setPassword(text)}
               secureTextEntry
-              placeholder='Enter Password'
+              placeholder='*********'
             />
           </View>
 
-          <TouchableOpacity style={{ backgroundColor: '#FFD700', padding: 14, borderRadius: 20, marginBottom: 30, alignItems: 'center' }}>
-            <Text style={{ color: 'gray', fontWeight: 'bold' }}>Sign Up</Text>
+          <TouchableOpacity onPress={handleLogin} style={{ backgroundColor: '#FFD700', padding: 15, marginTop: 10, borderRadius: 15, alignItems:"center", width:100, marginLeft: 285 }}>
+            <Text style={{ fontWeight: 'bold' }}> SignUp </Text>
           </TouchableOpacity>
 
-          <Text style={{ textAlign: 'center', color: 'gray', marginBottom: 20 }}>Or</Text>
-
-          <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 40 }}>
-            <TouchableOpacity style={{ backgroundColor: '#E5E5E5', padding: 10, borderRadius: 20 }}>
-              <Image source={require('../assets/images/gmail.png')} style={{ width: 40, height: 40 }} />
-            </TouchableOpacity>
-          </View>
         </View>
       </SafeAreaView>
     </View>

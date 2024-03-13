@@ -27,7 +27,7 @@ export default function WelcomeScreen() {
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 100 }}>
             <Text style={{ color: 'black', fontWeight: 'bold' }}>Already have an account?</Text>
             <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-              <Text style={{ color: 'black', fontWeight: 'bold', marginLeft: 80, backgroundColor: 'purple', borderRadius: 20, paddingVertical: 10, paddingHorizontal: 25 }}>
+              <Text style={{ color: 'white', fontWeight: 'bold', marginLeft: 80, backgroundColor: '#28a745', borderRadius: 20, paddingVertical: 10, paddingHorizontal: 25 }}>
                 Log In
               </Text>
             </TouchableOpacity>
