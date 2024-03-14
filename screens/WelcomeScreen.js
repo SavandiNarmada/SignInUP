@@ -4,7 +4,7 @@ import { themeColors } from '../App';
 import { useNavigation } from '@react-navigation/native';
 
 export default function WelcomeScreen() {
-  const navigation = useNavigation(); // Correctly invoke useNavigation
+  const navigation = useNavigation(); 
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: themeColors.bg }}>
